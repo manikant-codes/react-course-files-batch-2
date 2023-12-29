@@ -1,12 +1,8 @@
 import "./App.css";
-import Home from "./pages/Home";
+import ShinchanFandom from "./pages/ShinchanFandom";
 
 function App() {
-  return (
-    <>
-      <Home />
-    </>
-  );
+  return <ShinchanFandom />;
 }
 
 export default App;
