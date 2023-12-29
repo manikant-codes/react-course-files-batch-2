@@ -17,7 +17,30 @@ function MasalaCard(props) {
         }}
       />
       <div>
-        <p>{props.origin}</p>
+        <table
+          style={{
+            width: "100%",
+            borderCollapse: "collapse",
+          }}
+        >
+          <tbody>
+            {props.nutrients.map(function (value, index, array) {
+              return (
+                <tr key={index} style={{ borderBottom: "solid 1px gray" }}>
+                  <td style={{ padding: "4px" }}>{value.title}</td>
+                  <td
+                    style={{
+                      padding: "4px",
+                      textAlign: "right",
+                    }}
+                  >
+                    {value.value}
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
         <p>{props.price}</p>
       </div>
     </div>
