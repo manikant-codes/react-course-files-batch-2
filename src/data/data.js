@@ -10,6 +10,7 @@ export const characters = [
       { title: "Age", value: "5" },
       { title: "Birthday", value: "5 May" },
     ],
+    link: "shinchan",
   },
   {
     name: "Shinchan Nohara",
@@ -22,6 +23,7 @@ export const characters = [
       { title: "Age", value: "5" },
       { title: "Birthday", value: "5 May" },
     ],
+    link: "shinchan",
   },
   {
     name: "Shinchan Nohara",
@@ -34,6 +36,7 @@ export const characters = [
       { title: "Age", value: "5" },
       { title: "Birthday", value: "5 May" },
     ],
+    link: "shinchan",
   },
   {
     name: "Shinchan Nohara",
@@ -46,6 +49,7 @@ export const characters = [
       { title: "Age", value: "5" },
       { title: "Birthday", value: "5 May" },
     ],
+    link: "shinchan",
   },
   {
     name: "Shinchan Nohara",
@@ -70,6 +74,7 @@ export const characters = [
       { title: "Age", value: "5" },
       { title: "Birthday", value: "5 May" },
     ],
+    link: "shinchan",
   },
   {
     name: "Shinchan Nohara",
@@ -82,6 +87,7 @@ export const characters = [
       { title: "Age", value: "5" },
       { title: "Birthday", value: "5 May" },
     ],
+    link: "shinchan",
   },
   {
     name: "Shinchan Nohara",
@@ -94,6 +100,7 @@ export const characters = [
       { title: "Age", value: "5" },
       { title: "Birthday", value: "5 May" },
     ],
+    link: "shinchan",
   },
 ];
 

@@ -1,5 +1,6 @@
 import React from "react";
 import { companyName } from "../data/data";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
@@ -29,19 +30,22 @@ function Navbar() {
         }}
       >
         <li>
-          <a href="#" style={{ color: "white" }}>
+          {/* <a href="/" style={{ color: "white" }}>
             Home
-          </a>
+          </a> */}
+          <Link to="/" style={{ color: "white" }}>
+            Home
+          </Link>
         </li>
         <li>
-          <a href="#" style={{ color: "white" }}>
+          <Link to="/about" style={{ color: "white" }}>
             About
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="#" style={{ color: "white" }}>
+          <Link to="/contact" style={{ color: "white" }}>
             Contact
-          </a>
+          </Link>
         </li>
         {/* More links as needed */}
       </ul>

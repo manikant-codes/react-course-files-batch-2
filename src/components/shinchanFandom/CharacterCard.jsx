@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "../../styles/shinchanFandomCard.module.css";
+import { Link } from "react-router-dom";
 // import InfoTable from "./InfoTable";
 
 function CharacterCard(props) {
@@ -15,6 +16,8 @@ function CharacterCard(props) {
         <p className={styles.cardDescription}>{props.description}</p>
         {/* Info */}
         {/* <InfoTable rows={props.info} /> */}
+        {/* Link */}
+        <Link to={`/character/shinchan`}>More Info...</Link>
       </div>
     </div>
   );
