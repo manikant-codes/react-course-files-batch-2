@@ -1,0 +1,35 @@
+.container {
+  border-radius: 16px;
+  overflow: hidden;
+  border: solid 1px gray;
+}
+
+/* .cardContainer > img {
+    height: 350px;
+    width: 100%;
+    object-fit: cover;
+    object-position: top center;
+    margin-bottom: 0px !important;
+  } */
+
+.cardImage {
+  height: 350px;
+  width: 100%;
+  object-fit: cover;
+  object-position: top center;
+  margin-bottom: 0px !important;
+}
+
+.cardInfoContainer {
+  padding: 16px;
+  margin-top: -4px;
+  background-color: #e2e2e2;
+}
+
+.cardDescription {
+  display: -webkit-box;
+  max-width: 100%;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

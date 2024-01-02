@@ -96,3 +96,5 @@ export const characters = [
     ],
   },
 ];
+
+export const companyName = "Shinchan Fandom";
