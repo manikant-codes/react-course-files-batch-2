@@ -21,4 +21,8 @@ function App() {
   );
 }
 
+<Layout>
+  <About />
+</Layout>;
+
 export default App;

@@ -2,6 +2,7 @@
   border-radius: 16px;
   overflow: hidden;
   border: solid 1px gray;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 /* .cardContainer > img {
@@ -18,6 +19,7 @@
   object-fit: cover;
   object-position: top center;
   margin-bottom: 0px !important;
+  background-color: #fff59d;
 }
 
 .cardInfoContainer {

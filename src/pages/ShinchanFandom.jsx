@@ -15,6 +15,7 @@ function ShinchanFandom() {
             name={character.name}
             description={character.description}
             info={character.info}
+            link={character.link}
           />
         );
       })}

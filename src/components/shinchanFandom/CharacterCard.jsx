@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "../../styles/shinchanFandomCard.module.css";
 import { Link } from "react-router-dom";
+import LinkButton from "../common/LinkButton";
 // import InfoTable from "./InfoTable";
 
 function CharacterCard(props) {
@@ -17,7 +18,7 @@ function CharacterCard(props) {
         {/* Info */}
         {/* <InfoTable rows={props.info} /> */}
         {/* Link */}
-        <Link to={`/character/shinchan`}>More Info...</Link>
+        <LinkButton href={"/character/" + props.link}>More Info...</LinkButton>
       </div>
     </div>
   );
