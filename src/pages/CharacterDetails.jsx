@@ -1,9 +1,13 @@
 import React from "react";
+import CharacterImage from "../components/characterDetails/CharacterImage";
+import CharacterInfoTable from "../components/characterDetails/CharacterInfoTable";
+import CharacterTitleDescription from "../components/characterDetails/CharacterTitleDescription";
 import { characters } from "../data/data";
 import styles from "../styles/characterDetails.module.css";
 
 function CharacterDetails() {
   const path = window.location.pathname.split("/")[2];
+
   const character = characters.find(function (value, index, array) {
     return value.link === path;
   });
@@ -11,23 +15,14 @@ function CharacterDetails() {
   return (
     <div className={styles.container}>
       <div>
-        <h2>{character.name}</h2>
-        <p>{character.description}</p>
+        <CharacterTitleDescription
+          name={character.name}
+          description={character.description}
+        />
       </div>
       <div>
-        <div>
-          <img src={character.imgURL} alt="" />
-        </div>
-        <div>
-          <table>
-            <tbody>
-              <tr>
-                <td></td>
-                <td></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <CharacterImage imgURL={character.imgURL} />
+        <CharacterInfoTable info={character.info} />
       </div>
     </div>
   );
