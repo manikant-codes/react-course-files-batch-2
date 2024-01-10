@@ -1,8 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import TableRow from "./TableRow";
 import styles from "../../styles/characterInfoTable.module.css";
 
 function CharacterInfoTable(props) {
+  // const temp = useState(false);
+  // console.log("temp", temp);
+  const [isTableVisible, setIsTableVisible] = useState(false);
+
+  function handleClick() {
+    setIsTableVisible(!isTableVisible);
+  }
+
+  console.log("isTableVisible", isTableVisible);
+
   // function handleClick() {
   //   const table = document.getElementById("detailsPageInfoTable");
   //   const button = document.getElementById("toggleTableButton");
@@ -16,29 +26,28 @@ function CharacterInfoTable(props) {
   //   }
   // }
 
-  function greetings(person) {
-    alert("Hello " + person + "!");
-  }
+  // function greetings(person) {
+  //   alert("Hello " + person + "!");
+  // }
 
   return (
     <div>
       <button
         style={{ width: "100%" }}
-        onClick={function (e) {
-          console.log((e.target.innerHTML = "Button Clicked"));
-          greetings("Shinchan");
-        }}
+        onClick={handleClick}
         id="toggleTableButton"
       >
         Hide Info
       </button>
-      <table className={styles.table} id="detailsPageInfoTable">
-        <tbody>
-          {props.info.map(function (row, index, array) {
-            return <TableRow key={index} info={row} />;
-          })}
-        </tbody>
-      </table>
+      {isTableVisible && (
+        <table className={styles.table} id="detailsPageInfoTable">
+          <tbody>
+            {props.info.map(function (row, index, array) {
+              return <TableRow key={index} info={row} />;
+            })}
+          </tbody>
+        </table>
+      )}
     </div>
   );
 }
