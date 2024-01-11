@@ -37,7 +37,7 @@ function CharacterInfoTable(props) {
         onClick={handleClick}
         id="toggleTableButton"
       >
-        Hide Info
+        Hide Info {isTableVisible.toString()}
       </button>
       {isTableVisible && (
         <table className={styles.table} id="detailsPageInfoTable">

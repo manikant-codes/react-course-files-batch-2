@@ -1,28 +1,21 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Layout from "./layout/Layout";
-import About from "./pages/About";
-import CharacterDetails from "./pages/CharacterDetails";
-import Contact from "./pages/Contact";
-import PageNotFound from "./pages/PageNotFound";
-import ShinchanFandom from "./pages/ShinchanFandom";
+import UseStateExample1 from "./components/examples/useStateExamples/UseStateExample1";
+import UseStateExample2 from "./components/examples/useStateExamples/UseStateExample2";
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<ShinchanFandom />} />
-          <Route path="character/:name" element={<CharacterDetails />} />
-          <Route path="about" element={<About />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="*" element={<PageNotFound />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    // <BrowserRouter>
+    //   <Routes>
+    //     <Route path="/" element={<Layout />}>
+    //       <Route index element={<ShinchanFandom />} />
+    //       <Route path="character/:name" element={<CharacterDetails />} />
+    //       <Route path="about" element={<About />} />
+    //       <Route path="contact" element={<Contact />} />
+    //       <Route path="*" element={<PageNotFound />} />
+    //     </Route>
+    //   </Routes>
+    // </BrowserRouter>
+
+    <UseStateExample2 />
   );
 }
-
-<Layout>
-  <About />
-</Layout>;
 
 export default App;
