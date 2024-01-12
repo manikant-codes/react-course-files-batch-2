@@ -1,5 +1,5 @@
-import UseStateExample1 from "./components/examples/useStateExamples/UseStateExample1";
-import UseStateExample2 from "./components/examples/useStateExamples/UseStateExample2";
+import UseStateExample4 from "./components/examples/useStateExamples/UseStateExample4";
+
 function App() {
   return (
     // <BrowserRouter>
@@ -14,7 +14,7 @@ function App() {
     //   </Routes>
     // </BrowserRouter>
 
-    <UseStateExample2 />
+    <UseStateExample4 />
   );
 }
 

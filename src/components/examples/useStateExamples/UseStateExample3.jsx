@@ -8,12 +8,69 @@ function UseStateExample3() {
     color: "red",
   });
 
+  const [formValues, setFormValues] = useState({
+    brand: "Ford",
+    model: "Mustang",
+    year: "1964",
+    color: "red",
+  });
+
+  console.log("formValues", formValues);
+
+  function handleChange(e) {
+    console.log("e.target.name", e.target.name);
+    setFormValues({ ...formValues, [e.target.name]: e.target.value });
+  }
+
+  function handleSubmit() {
+    setCar({ ...car, ...formValues });
+  }
+
   return (
-    <div>
-      <h1>My {car.brand}</h1>
-      <p>
-        It is a {car.color} {car.model} from {car.year}.
-      </p>
+    <div className="containerOuter">
+      <div className="containerInner">
+        <div style={{ marginBottom: "32px" }}>
+          <h1>My {car.brand}</h1>
+          <p>
+            It is a {car.color} {car.model} from {car.year}.
+          </p>
+        </div>
+        <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
+          <input
+            type="text"
+            placeholder="Brand"
+            name="brand"
+            onChange={function (e) {
+              handleChange(e);
+            }}
+          />
+          <input
+            type="text"
+            placeholder="Color"
+            name="color"
+            onChange={function (e) {
+              handleChange(e);
+            }}
+          />
+          <input
+            type="text"
+            placeholder="Model"
+            name="model"
+            onChange={function (e) {
+              handleChange(e);
+            }}
+          />
+          <input
+            type="text"
+            placeholder="Year"
+            name="year"
+            onChange={function (e) {
+              handleChange(e);
+            }}
+          />
+          <button onClick={handleSubmit}>Submit!</button>
+        </div>
+      </div>
     </div>
   );
 }
