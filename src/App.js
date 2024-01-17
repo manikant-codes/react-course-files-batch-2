@@ -1,4 +1,4 @@
-import UseEffectExample1 from "./components/examples/useEffectExamples/UseEffectExample1";
+import UseEffectExample2 from "./components/examples/useEffectExamples/example2/UseEffectExample2";
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
     //   </Routes>
     // </BrowserRouter>
 
-    <UseEffectExample1 />
+    <UseEffectExample2 />
   );
 }
 
