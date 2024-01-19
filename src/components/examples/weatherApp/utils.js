@@ -73,7 +73,7 @@ const images = [
   },
 ];
 
-export function fahrenheitToCelcius(temp) {
+export function kelvinToCelcius(temp) {
   return Math.round(temp - 273.15);
 }
 
