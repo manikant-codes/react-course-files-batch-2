@@ -1,4 +1,4 @@
-import UseEffectExample2 from "./components/examples/useEffectExamples/example2/UseEffectExample2";
+import WeatherApp from "./components/examples/weatherApp/WeatherApp";
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
     //   </Routes>
     // </BrowserRouter>
 
-    <UseEffectExample2 />
+    <WeatherApp />
   );
 }
 
