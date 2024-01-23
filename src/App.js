@@ -1,21 +1,5 @@
-import WeatherApp from "./components/examples/weatherApp/WeatherApp";
-
 function App() {
-  return (
-    // <BrowserRouter>
-    //   <Routes>
-    //     <Route path="/" element={<Layout />}>
-    //       <Route index element={<ShinchanFandom />} />
-    //       <Route path="character/:name" element={<CharacterDetails />} />
-    //       <Route path="about" element={<About />} />
-    //       <Route path="contact" element={<Contact />} />
-    //       <Route path="*" element={<PageNotFound />} />
-    //     </Route>
-    //   </Routes>
-    // </BrowserRouter>
-
-    <WeatherApp />
-  );
+  return <h1>Hello World!</h1>;
 }
 
 export default App;
