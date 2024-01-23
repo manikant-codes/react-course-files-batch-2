@@ -1,5 +1,7 @@
+import Pokedex from "./pages/Pokedex";
+
 function App() {
-  return <h1>Hello World!</h1>;
+  return <Pokedex />;
 }
 
 export default App;
