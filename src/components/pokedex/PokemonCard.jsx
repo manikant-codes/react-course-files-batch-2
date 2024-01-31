@@ -100,7 +100,6 @@ function PokemonCard({ image, name, tags }) {
 
   const tagStyles = {
     display: "inline-block",
-    // backgroundColor: getTagBackgroundColor(type),
     padding: "4px 8px",
     fontSize: "14px",
     fontWeight: "bold",

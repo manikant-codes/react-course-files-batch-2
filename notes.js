@@ -9,6 +9,20 @@
 // Expression ek chota statement/instruction hai jiska output ek single value hoo.
 
 // ------------------------------
+// hooks
+// ------------------------------
+// React aap ko kuch features deta hai jaise ke, state-management, side-effect karpana, etc.
+// hooks ek tarika hai react jo features deta hai unhe use karpane ka.
+//  hook ssirf function components me hi kaam karte hai, class component me nahi.
+
+// ------------------------------
+// useState
+// ------------------------------
+// Is hook ke madad se aap react me state-management kar sakte hoo.
+// State yane koi bhi aisi value jo aap chahte hoo react aap ke liye monitor kare (dekhe).
+// Is value ke change hone pe react component ko re-render kardeta hai (wapas se load kardeta hai, us state ke naye value ke saath).
+
+// ------------------------------
 // useEffect
 // ------------------------------
 // useEffect ek hook hai, jiska use ham side-effect karne ke liye karte hain.
