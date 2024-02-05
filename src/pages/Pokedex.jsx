@@ -1,6 +1,4 @@
-import React, { useEffect, useState } from "react";
-import PokemonCard from "../components/pokedex/PokemonCard";
-import { getPokemonDetails, getPokemons } from "../services/apiServices";
+import React from "react";
 import { useFetch } from "../cusatomHooks/useFetch";
 
 function Pokedex() {
