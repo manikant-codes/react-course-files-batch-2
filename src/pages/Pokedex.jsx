@@ -1,47 +1,15 @@
 import React, { useState } from "react";
-import { useFetch, useMultipleFetch } from "../cusatomHooks/useFetch";
+import Loading from "../components/Loading";
 import PokemonCard from "../components/pokedex/PokemonCard";
+import { useMultipleFetch } from "../cusatomHooks/useFetch";
 
 function Pokedex() {
-  // const [loading, data, error] = useFetch(
-  //   `https://pokeapi.co/api/v2/pokemon/?offset=${0}&limit=${20}`
-  // );
-
-  const [loading, data, error] = useMultipleFetch(
-    `https://pokeapi.co/api/v2/pokemon/?offset=${0}&limit=${20}`
-  );
-
-  console.log("data", data);
-
-  // const [pokemons, setPokemons] = useState(null);
-  // const [error, setError] = useState(null);
-  // const [loading, setLoading] = useState(false);
+  const limit = 20;
   const [page, setPage] = useState(0);
-
-  // async function fetchData() {
-  //   const temp = [];
-  //   setLoading(true);
-  //   try {
-  //     const data = await getPokemons(page);
-  //     for (const r of data.results) {
-  //       const pokemon = await getPokemonDetails(r.url);
-  //       temp.push(pokemon);
-  //     }
-  //     setPokemons(temp);
-  //   } catch (err) {
-  //     console.log(err);
-  //     setError(err);
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // }
-
-  // useEffect(
-  //   function () {
-  //     fetchData();
-  //   },
-  //   [page]
-  // );
+  const offset = limit * page;
+  const { loading, lstData, error } = useMultipleFetch(
+    `https://pokeapi.co/api/v2/pokemon/?offset=${offset}&limit=${limit}`
+  );
 
   function handleNext() {
     setPage(function (p) {
@@ -59,9 +27,11 @@ function Pokedex() {
     });
   }
 
-  if (loading) return <h1>Loading...</h1>;
+  if (loading) return <Loading />;
 
-  if ((!loading && error) || (!loading && !data))
+  console.log(lstData, error);
+
+  if ((!loading && error) || (!loading && !lstData))
     return <h1>Something went wrong...</h1>;
 
   return (
@@ -120,9 +90,10 @@ function Pokedex() {
           width: "100%",
         }}
       >
-        {data.map(function (pokemon) {
+        {lstData.map(function (pokemon) {
           return (
             <PokemonCard
+              key={pokemon.id}
               name={pokemon.name}
               image={pokemon.sprites.other["official-artwork"].front_default}
               tags={pokemon.types.map((type) => {
@@ -133,7 +104,6 @@ function Pokedex() {
         })}
       </div>
     </>
-    // <h1>Pokedex</h1>
   );
 }
 

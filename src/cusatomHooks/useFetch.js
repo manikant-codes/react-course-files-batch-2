@@ -26,13 +26,14 @@ export function useFetch(url) {
     [url]
   );
 
-  return [loading, data, error];
+  return { loading, data, error };
 }
 
 export function useMultipleFetch(url) {
-  const [l, d, e] = useFetch(url);
+  const { data } = useFetch(url);
+
   const [loading, setLoading] = useState(false);
-  const [data, setData] = useState(null);
+  const [lstData, setLstData] = useState(null);
   const [error, setError] = useState(null);
 
   useEffect(
@@ -40,9 +41,9 @@ export function useMultipleFetch(url) {
       async function fetchData() {
         try {
           setLoading(true);
-          let temp = await d.results.map(async (i) => {
+          let temp = await data.results.map(async (r) => {
             try {
-              const res = await fetch(i.url);
+              const res = await fetch(r.url);
               const item = await res.json();
               return item;
             } catch (err) {
@@ -50,7 +51,7 @@ export function useMultipleFetch(url) {
             }
           });
           temp = await Promise.all(temp);
-          setData(temp);
+          setLstData(temp);
         } catch (error) {
           console.log(error);
           setError(error);
@@ -59,12 +60,12 @@ export function useMultipleFetch(url) {
         }
       }
 
-      if (d && d.results && Array.isArray(d.results)) {
+      if (data && data.results && Array.isArray(data.results)) {
         fetchData();
       }
     },
-    [d]
+    [data]
   );
 
-  return [loading, data, error];
+  return { loading, lstData, error };
 }

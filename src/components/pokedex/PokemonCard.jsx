@@ -55,11 +55,11 @@ function PokemonCard({ image, name, tags }) {
     width: "100%",
     maxWidth: "300px",
 
-    "@media (min-width: 768px)": {
+    "@media (minWidth: 768px)": {
       maxWidth: "400px",
     },
 
-    "@media (min-width: 1024px)": {
+    "@media (minWidth: 1024px)": {
       maxWidth: "500px",
     },
   };
