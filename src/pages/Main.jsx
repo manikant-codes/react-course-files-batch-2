@@ -1,8 +1,8 @@
 import React from "react";
-import RefHookDOMDemo from "../components/RefHookDOMDemo";
+import MemoHookSolutionDemo from "../components/memoHookDemo/MemoHookSolutionDemo";
 
 function Main() {
-  return <RefHookDOMDemo />;
+  return <MemoHookSolutionDemo />;
 }
 
 export default Main;
