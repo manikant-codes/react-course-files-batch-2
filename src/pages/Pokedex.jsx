@@ -7,7 +7,7 @@ function Pokedex() {
   const limit = 20;
   const [page, setPage] = useState(0);
   const offset = limit * page;
-  const { loading, lstData, error } = useMultipleFetch(
+  const { loading, data, error } = useMultipleFetch(
     `https://pokeapi.co/api/v2/pokemon/?offset=${offset}&limit=${limit}`
   );
 
@@ -29,9 +29,9 @@ function Pokedex() {
 
   if (loading) return <Loading />;
 
-  console.log(lstData, error);
+  console.log(data, error);
 
-  if ((!loading && error) || (!loading && !lstData))
+  if ((!loading && error) || (!loading && !data))
     return <h1>Something went wrong...</h1>;
 
   return (
@@ -90,7 +90,7 @@ function Pokedex() {
           width: "100%",
         }}
       >
-        {lstData.map(function (pokemon) {
+        {data.map(function (pokemon) {
           return (
             <PokemonCard
               key={pokemon.id}

@@ -14,7 +14,6 @@ export function useFetch(url) {
           const data = await response.json();
           setData(data);
         } catch (error) {
-          console.log(error);
           setError(error);
         } finally {
           setLoading(false);
@@ -30,42 +29,41 @@ export function useFetch(url) {
 }
 
 export function useMultipleFetch(url) {
-  const { data } = useFetch(url);
+  const { data: urls } = useFetch(url);
 
   const [loading, setLoading] = useState(false);
-  const [lstData, setLstData] = useState(null);
+  const [data, setData] = useState(urls);
   const [error, setError] = useState(null);
+
+  console.log("urls", urls);
 
   useEffect(
     function () {
       async function fetchData() {
         try {
           setLoading(true);
-          let temp = await data.results.map(async (r) => {
-            try {
-              const res = await fetch(r.url);
-              const item = await res.json();
-              return item;
-            } catch (err) {
-              throw err;
-            }
+          const promises = urls.results.map(async (result) => {
+            const response = await fetch(result.url);
+            const json = await response.json();
+            return json;
           });
-          temp = await Promise.all(temp);
-          setLstData(temp);
+
+          const resolved = await Promise.all(promises);
+
+          setData(resolved);
         } catch (error) {
-          console.log(error);
           setError(error);
         } finally {
           setLoading(false);
         }
       }
 
-      if (data && data.results && Array.isArray(data.results)) {
+      if (urls && urls.results) {
         fetchData();
       }
     },
-    [data]
+    [urls]
   );
 
-  return { loading, lstData, error };
+  return { loading, data, error };
 }
