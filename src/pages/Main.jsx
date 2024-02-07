@@ -1,8 +1,15 @@
 import React from "react";
-import MemoHookSolutionDemo from "../components/memoHookDemo/MemoHookSolutionDemo";
+import ComponentA from "../components/contextDemo/ComponentA";
+import ThemeProvider, {
+  useTheme,
+} from "../components/contextDemo/ThemeProvider";
 
 function Main() {
-  return <MemoHookSolutionDemo />;
+  return (
+    <ThemeProvider>
+      <ComponentA />
+    </ThemeProvider>
+  );
 }
 
 export default Main;
