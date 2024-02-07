@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Loading from "../components/Loading";
 import PokemonCard from "../components/pokedex/PokemonCard";
-import { useMultipleFetch } from "../cusatomHooks/useFetch";
+import { useMultipleFetch } from "../customHooks/useFetch";
 
 function Pokedex() {
   const limit = 20;
