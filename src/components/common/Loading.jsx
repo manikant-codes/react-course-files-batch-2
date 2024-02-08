@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./loading.css";
+import "../../styles/loading.css";
 
 const Loading = ({ size, text }) => {
   const containerStyle = {
