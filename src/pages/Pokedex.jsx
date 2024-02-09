@@ -3,7 +3,7 @@ import Loading from "../components/common/Loading";
 import PaginationButons from "../components/pokedex/PaginationButons";
 import PokemonsList from "../components/pokedex/PokemonsList";
 import Searchbar from "../components/pokedex/Searchbar";
-import SearchedDataList from "../components/pokedex/SearchedDataList";
+import SearchedPokemon from "../components/pokedex/SearchedPokemon";
 import { useMultipleFetch } from "../customHooks/useFetch";
 
 function Pokedex() {
@@ -30,7 +30,7 @@ function Pokedex() {
       />
       <PaginationButons setPage={setPage} />
       {searchedData && query ? (
-        <SearchedDataList pokemon={searchedData} />
+        <SearchedPokemon pokemon={searchedData} />
       ) : (
         <PokemonsList data={data} />
       )}

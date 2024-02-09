@@ -1,7 +1,7 @@
 import React from "react";
 import PokemonCard from "./PokemonCard";
 
-function SearchedDataList(props) {
+function SearchedPokemon(props) {
   const { pokemon } = props;
   return (
     <div
@@ -26,4 +26,4 @@ function SearchedDataList(props) {
   );
 }
 
-export default SearchedDataList;
+export default SearchedPokemon;
