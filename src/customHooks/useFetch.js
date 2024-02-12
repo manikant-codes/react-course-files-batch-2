@@ -35,8 +35,6 @@ export function useMultipleFetch(url) {
   const [data, setData] = useState(urls);
   const [error, setError] = useState(null);
 
-  console.log("urls", urls);
-
   useEffect(
     function () {
       async function fetchData() {

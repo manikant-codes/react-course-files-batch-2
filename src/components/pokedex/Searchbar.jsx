@@ -36,6 +36,7 @@ function Searchbar(props) {
                 props.setSearchedData(data);
               }}
               type="button"
+              className="btn btn-light"
             >
               Submit
             </Button>

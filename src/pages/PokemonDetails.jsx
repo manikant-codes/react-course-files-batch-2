@@ -4,6 +4,8 @@ import NextPrevButtons from "../components/pokemonDetails/NextPrevButtons";
 import BasicInfo from "../components/pokemonDetails/basicInfo/BasicInfo";
 import { useFetch } from "../customHooks/useFetch";
 import Loading from "../components/common/Loading";
+import MoreInfo from "../components/pokemonDetails/moreInfo/MoreInfo";
+import EvolutionInfo from "../components/pokemonDetails/evolutionInfo/EvolutionInfo";
 
 function PokemonDetails() {
   const { id } = useParams();
@@ -26,6 +28,8 @@ function PokemonDetails() {
     <div>
       <NextPrevButtons number={number} setName={setName} />
       <BasicInfo data={data} />
+      <MoreInfo stats={data.stats} types={data.types} />
+      <EvolutionInfo />
     </div>
   );
 }
