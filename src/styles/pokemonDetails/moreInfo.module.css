@@ -1,0 +1,30 @@
+.container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 32px;
+  max-width: 800px;
+  overflow: hidden;
+  margin: auto;
+  margin-top: 32px;
+  background-color: #e0e0e0;
+  border-radius: 32px;
+}
+
+.statsContainer {
+  width: 100%;
+  border-radius: 32px;
+  overflow: hidden;
+}
+
+.typesContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+}
+
+.typesInnerContainer {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+}

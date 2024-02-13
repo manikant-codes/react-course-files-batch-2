@@ -1,49 +1,34 @@
 import React from "react";
-import { Button, Col, Form, Navbar, Row } from "react-bootstrap";
-import { getPokemonDetails } from "../../services/apiServices";
+import { fetchData } from "../../services/apiServices";
+import styles from "../../styles/pokedex/searchbar.module.css";
 
 function Searchbar(props) {
+  function handleChange(e) {
+    props.setQuery(e.target.value);
+    if (e.target.value === "") {
+      props.setSearchResult(null);
+    }
+  }
+
+  async function handleSearch() {
+    const data = await fetchData(
+      `https://pokeapi.co/api/v2/pokemon/${props.query}`
+    );
+    props.setSearchResult(data);
+  }
+
   return (
-    <Navbar
-      bg="primary"
-      data-bs-theme="dark"
-      className="bg-body-tertiary justify-content-center p-3"
-    >
-      <div>
-        <Row>
-          <h3 className="text-light fs-5">Name or Number</h3>
-        </Row>
-        <Row>
-          <Col xs="auto">
-            <Form.Control
-              type="text"
-              placeholder="Search"
-              className=" mr-sm-2"
-              onChange={(e) => {
-                props.setQuery(e.target.value);
-                if (e.target.value === "") {
-                  props.setSearchedData(null);
-                }
-              }}
-            />
-          </Col>
-          <Col xs="auto">
-            <Button
-              onClick={async () => {
-                const data = await getPokemonDetails(
-                  `https://pokeapi.co/api/v2/pokemon/${props.query}`
-                );
-                props.setSearchedData(data);
-              }}
-              type="button"
-              className="btn btn-light"
-            >
-              Submit
-            </Button>
-          </Col>
-        </Row>
-      </div>
-    </Navbar>
+    <nav className={styles.nav}>
+      <input
+        className={styles.input}
+        type="text"
+        placeholder="Name or Number"
+        onChange={handleChange}
+      />
+      <button className={styles.btn} onClick={handleSearch}>
+        Search
+      </button>
+    </nav>
   );
 }
 

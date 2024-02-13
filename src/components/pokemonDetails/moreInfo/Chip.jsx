@@ -1,4 +1,5 @@
 import React from "react";
+import { getTagBackgroundColor } from "../../../utils/tagHelper";
 
 function Chip(props) {
   return (
@@ -7,7 +8,7 @@ function Chip(props) {
         borderRadius: "32px",
         display: "inline-block",
         padding: "8px 16px",
-        backgroundColor: "#d1c4e9",
+        backgroundColor: getTagBackgroundColor(props.title),
       }}
     >
       {props.title}

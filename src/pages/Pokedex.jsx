@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import Loading from "../components/common/Loading";
-import PaginationButons from "../components/pokedex/PaginationButons";
+import Pagination from "../components/pokedex/Pagination";
 import PokemonsList from "../components/pokedex/PokemonsList";
 import Searchbar from "../components/pokedex/Searchbar";
-import SearchedPokemon from "../components/pokedex/SearchedPokemon";
 import { useMultipleFetch } from "../customHooks/useFetch";
 
 function Pokedex() {
@@ -11,10 +10,15 @@ function Pokedex() {
   const [page, setPage] = useState(0);
   const offset = limit * page;
   const { loading, data, error } = useMultipleFetch(
-    `https://pokeapi.co/api/v2/pokemon/?offset=${offset}&limit=${limit}`
+    `https://pokeapi.co/api/v2/pokemon/?offset=${offset}&limit=${limit}`,
+    (response) => {
+      return response.results.map((value) => {
+        return value.url;
+      });
+    }
   );
   const [query, setQuery] = useState();
-  const [searchedData, setSearchedData] = useState(null);
+  const [searchResult, setSearchResult] = useState(null);
 
   if (loading) return <Loading />;
 
@@ -25,15 +29,11 @@ function Pokedex() {
     <>
       <Searchbar
         setQuery={setQuery}
-        setSearchedData={setSearchedData}
+        setSearchResult={setSearchResult}
         query={query}
       />
-      <PaginationButons setPage={setPage} />
-      {searchedData && query ? (
-        <SearchedPokemon pokemon={searchedData} />
-      ) : (
-        <PokemonsList data={data} />
-      )}
+      <PokemonsList data={searchResult && query ? searchResult : data} />
+      <Pagination setPage={setPage} />
     </>
   );
 }

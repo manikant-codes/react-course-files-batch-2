@@ -1,12 +1,11 @@
 import React from "react";
 import Stats from "./Stats";
 import Types from "./Types";
+import styles from "../../../styles/pokemonDetails/moreInfo.module.css";
 
 function MoreInfo(props) {
   return (
-    <div
-      style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}
-    >
+    <div className={styles.container}>
       <Stats stats={props.stats} />
       <Types types={props.types} />
     </div>

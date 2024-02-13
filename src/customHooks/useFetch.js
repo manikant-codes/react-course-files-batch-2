@@ -1,54 +1,47 @@
 import { useEffect, useState } from "react";
+import { fetchData, fetchMultipleData } from "../services/apiServices";
 
-export function useFetch(url) {
+export function useFetch(endpoint) {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
 
   useEffect(
     function () {
-      async function fetchData() {
+      async function fetchDataFromApi() {
         try {
           setLoading(true);
-          const response = await fetch(url);
-          const data = await response.json();
-          setData(data);
-        } catch (error) {
-          setError(error);
+          const response = await fetchData(endpoint);
+          setData(response);
+        } catch (err) {
+          setError(err);
         } finally {
           setLoading(false);
         }
       }
 
-      fetchData();
+      fetchDataFromApi();
     },
-    [url]
+    [endpoint]
   );
 
   return { loading, data, error };
 }
 
-export function useMultipleFetch(url) {
-  const { data: urls } = useFetch(url);
-
+export function useMultipleFetch(url, getUrls) {
   const [loading, setLoading] = useState(false);
-  const [data, setData] = useState(urls);
+  const [data, setData] = useState(null);
   const [error, setError] = useState(null);
 
   useEffect(
     function () {
-      async function fetchData() {
+      async function fetchDataFromApi() {
         try {
           setLoading(true);
-          const promises = urls.results.map(async (result) => {
-            const response = await fetch(result.url);
-            const json = await response.json();
-            return json;
-          });
-
-          const resolved = await Promise.all(promises);
-
-          setData(resolved);
+          const response = await fetchData(url);
+          const urls = getUrls(response);
+          const multipleResponse = await fetchMultipleData(urls);
+          setData(multipleResponse);
         } catch (error) {
           setError(error);
         } finally {
@@ -56,11 +49,10 @@ export function useMultipleFetch(url) {
         }
       }
 
-      if (urls && urls.results) {
-        fetchData();
-      }
+      fetchDataFromApi();
     },
-    [urls]
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [url]
   );
 
   return { loading, data, error };

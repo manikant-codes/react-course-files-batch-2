@@ -1,0 +1,50 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  background-color: #e0e0e0;
+  max-width: 800px;
+  margin: auto;
+  border-radius: 32px;
+  padding: 32px;
+}
+
+.innerContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+}
+
+.imageContainer {
+  width: 100%;
+  height: 100%;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.tableContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background-color: #30a7d7;
+  padding: 32px;
+  border-radius: 32px;
+}
+
+.tableContainer tbody tr {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 16px;
+}
+
+.tableContainer tbody tr td p {
+  margin: 0px;
+}
+
+.tableContainer tbody tr td p:first-child {
+  color: white;
+}

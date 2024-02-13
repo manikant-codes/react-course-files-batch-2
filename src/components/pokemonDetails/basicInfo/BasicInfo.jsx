@@ -2,6 +2,7 @@ import React from "react";
 import Title from "./Title";
 import Image from "./Image";
 import Details from "./Details";
+import styles from "../../../styles/pokemonDetails/basicInfo.module.css";
 
 function BasicInfo(props) {
   const { data } = props;
@@ -22,9 +23,9 @@ function BasicInfo(props) {
   } = data;
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: "32px" }}>
+    <div className={styles.container}>
       <Title id={id} name={name} />
-      <div style={{ display: "flex", width: "70%", margin: "auto" }}>
+      <div className={styles.innerContainer}>
         <Image name={name} img={front_default} />
         <Details height={height} weight={weight} abilities={abilities} />
       </div>

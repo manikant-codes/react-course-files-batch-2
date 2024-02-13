@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-import NextPrevButtons from "../components/pokemonDetails/NextPrevButtons";
+import DetailsPagePagination from "../components/pokemonDetails/DetailsPagePagination";
 import BasicInfo from "../components/pokemonDetails/basicInfo/BasicInfo";
 import { useFetch } from "../customHooks/useFetch";
 import Loading from "../components/common/Loading";
@@ -9,9 +9,7 @@ import EvolutionInfo from "../components/pokemonDetails/evolutionInfo/EvolutionI
 
 function PokemonDetails() {
   const { id } = useParams();
-
   const [name, setName] = useState(id);
-
   const { loading, data, error } = useFetch(
     `https://pokeapi.co/api/v2/pokemon/${name}`
   );
@@ -26,10 +24,10 @@ function PokemonDetails() {
 
   return (
     <div>
-      <NextPrevButtons number={number} setName={setName} />
+      <DetailsPagePagination number={number} setName={setName} />
       <BasicInfo data={data} />
       <MoreInfo stats={data.stats} types={data.types} />
-      <EvolutionInfo />
+      <EvolutionInfo id={id} />
     </div>
   );
 }

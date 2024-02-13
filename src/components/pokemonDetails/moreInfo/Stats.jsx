@@ -1,11 +1,11 @@
 import React from "react";
 import CanvasJSReact from "@canvasjs/react-charts";
+import styles from "../../../styles/pokemonDetails/moreInfo.module.css";
 
 function Stats(props) {
   const stats = props.stats.map((value) => {
     return value.base_stat;
   });
-  const CanvasJS = CanvasJSReact.CanvasJS;
   const CanvasJSChart = CanvasJSReact.CanvasJSChart;
   const options = {
     title: {
@@ -26,7 +26,7 @@ function Stats(props) {
     ],
   };
   return (
-    <div>
+    <div className={styles.statsContainer}>
       <CanvasJSChart options={options} />
     </div>
   );
