@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import Loading from "../components/common/Loading";
 import PaginationButons from "../components/pokedex/PaginationButons";
 import PokemonsList from "../components/pokedex/PokemonsList";
@@ -10,8 +10,14 @@ function Pokedex() {
   const limit = 20;
   const [page, setPage] = useState(0);
   const offset = limit * page;
+  const getData = useCallback((data) => {
+    return data.results.map((result) => {
+      return result.url;
+    });
+  }, []);
   const { loading, data, error } = useMultipleFetch(
-    `https://pokeapi.co/api/v2/pokemon/?offset=${offset}&limit=${limit}`
+    `https://pokeapi.co/api/v2/pokemon/?offset=${offset}&limit=${limit}`,
+    getData
   );
   const [query, setQuery] = useState();
   const [searchedData, setSearchedData] = useState(null);

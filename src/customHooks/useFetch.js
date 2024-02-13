@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { fetchData, fetchMultipleData } from "../services/apiServices";
 
 export function useFetch(url) {
   const [loading, setLoading] = useState(false);
@@ -7,12 +8,11 @@ export function useFetch(url) {
 
   useEffect(
     function () {
-      async function fetchData() {
+      async function fetchDataFromApi() {
         try {
           setLoading(true);
-          const response = await fetch(url);
-          const data = await response.json();
-          setData(data);
+          const result = await fetchData(url);
+          setData(result);
         } catch (error) {
           setError(error);
         } finally {
@@ -20,7 +20,7 @@ export function useFetch(url) {
         }
       }
 
-      fetchData();
+      fetchDataFromApi();
     },
     [url]
   );
@@ -28,27 +28,22 @@ export function useFetch(url) {
   return { loading, data, error };
 }
 
-export function useMultipleFetch(url) {
-  const { data: urls } = useFetch(url);
-
+export function useMultipleFetch(url, getUrls) {
   const [loading, setLoading] = useState(false);
-  const [data, setData] = useState(urls);
+  const [data, setData] = useState(null);
   const [error, setError] = useState(null);
 
   useEffect(
     function () {
-      async function fetchData() {
+      async function fetchDataFromApi() {
         try {
           setLoading(true);
-          const promises = urls.results.map(async (result) => {
-            const response = await fetch(result.url);
-            const json = await response.json();
-            return json;
-          });
-
-          const resolved = await Promise.all(promises);
-
-          setData(resolved);
+          const resultSingle = await fetchData(url);
+          console.log("result", resultSingle);
+          const urls = getUrls(resultSingle);
+          console.log("urls", urls);
+          const result = await fetchMultipleData(urls);
+          setData(result);
         } catch (error) {
           setError(error);
         } finally {
@@ -56,11 +51,9 @@ export function useMultipleFetch(url) {
         }
       }
 
-      if (urls && urls.results) {
-        fetchData();
-      }
+      fetchDataFromApi();
     },
-    [urls]
+    [getUrls, url]
   );
 
   return { loading, data, error };

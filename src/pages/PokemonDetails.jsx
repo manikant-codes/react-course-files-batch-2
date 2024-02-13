@@ -29,7 +29,7 @@ function PokemonDetails() {
       <NextPrevButtons number={number} setName={setName} />
       <BasicInfo data={data} />
       <MoreInfo stats={data.stats} types={data.types} />
-      <EvolutionInfo />
+      <EvolutionInfo id={number} />
     </div>
   );
 }

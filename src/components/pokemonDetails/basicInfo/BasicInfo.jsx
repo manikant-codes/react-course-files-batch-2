@@ -26,7 +26,12 @@ function BasicInfo(props) {
       <Title id={id} name={name} />
       <div style={{ display: "flex", width: "70%", margin: "auto" }}>
         <Image name={name} img={front_default} />
-        <Details height={height} weight={weight} abilities={abilities} />
+        <Details
+          id={id}
+          height={height}
+          weight={weight}
+          abilities={abilities}
+        />
       </div>
     </div>
   );

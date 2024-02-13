@@ -1,6 +1,6 @@
 import React from "react";
 import { Button, Col, Form, Navbar, Row } from "react-bootstrap";
-import { getPokemonDetails } from "../../services/apiServices";
+import { fetchData } from "../../services/apiServices";
 
 function Searchbar(props) {
   return (
@@ -30,7 +30,7 @@ function Searchbar(props) {
           <Col xs="auto">
             <Button
               onClick={async () => {
-                const data = await getPokemonDetails(
+                const data = await fetchData(
                   `https://pokeapi.co/api/v2/pokemon/${props.query}`
                 );
                 props.setSearchedData(data);

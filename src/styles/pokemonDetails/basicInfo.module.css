@@ -1,0 +1,15 @@
+.tableContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  background-color: #30a7d7;
+  padding: 32px;
+  border-radius: 32px;
+}
+.tableContainer div p {
+  margin: 0px;
+}
+
+.tableContainer div p:first-child {
+  color: white;
+}
