@@ -9,15 +9,14 @@ import EvolutionInfo from "../components/pokemonDetails/evolutionInfo/EvolutionI
 
 function PokemonDetails() {
   const { id } = useParams();
-
   const [name, setName] = useState(id);
-
   const { loading, data, error } = useFetch(
     `https://pokeapi.co/api/v2/pokemon/${name}`
   );
 
   if (loading) return <Loading />;
 
+  // Fix this. It's not the best way to handle errors but it works for now.
   if ((!loading && !data) || error) {
     return <h2>Something went wrong</h2>;
   }

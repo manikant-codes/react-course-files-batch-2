@@ -1,0 +1,67 @@
+.cardContainerStyles {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-repeat: white;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  width: 100%;
+  max-width: 300px;
+  cursor: pointer;
+}
+
+.imageContainerStyles {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.imageStyles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.nameStyles {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.tagsStyles {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.tagStyles {
+  display: inline-block;
+  padding: 4px 8px;
+  font-size: 14px;
+  font-weight: bold;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  border-radius: 20px;
+}
+
+@media screen and (minwidth: 768px) {
+  .cardContainerStyles {
+    max-width: 400px;
+  }
+}
+@media (minwidth: 1024px) {
+  .cardContainerStyles {
+    max-width: 500px;
+  }
+}
