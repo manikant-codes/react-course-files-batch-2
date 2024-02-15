@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+  background-color: #c62828;
+  color: white;
+}
+
+.links {
+  display: flex;
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+  gap: 16px;
+}

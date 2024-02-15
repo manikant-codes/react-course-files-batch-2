@@ -1,16 +1,17 @@
+import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import NotFound from "./pages/NotFound";
-import Pokedex from "./pages/Pokedex";
-import "bootstrap/dist/css/bootstrap.min.css";
-import PokemonDetails from "./pages/PokemonDetails";
+import Home from "./pages/Home";
+import Layout from "./layouts/Layout";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Pokedex />} />
-        <Route path="/pokemon/:id" element={<PokemonDetails />} />
-        <Route path="*" element={<NotFound />} />
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="*" element={<NotFound />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );

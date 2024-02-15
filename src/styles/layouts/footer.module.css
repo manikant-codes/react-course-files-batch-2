@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 32px;
+  background-color: #212121;
+  color: white;
+}
+
+.container div p {
+  margin: 0px;
+}
+
+.links {
+  display: flex;
+  list-style-type: none;
+  gap: 32px;
+  margin: 0px;
+  padding: 0px;
+}
