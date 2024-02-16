@@ -8,10 +8,11 @@ button {
   padding: 8px 14px;
   border-radius: 32px;
   border: none;
-  background-color: #ffc400;
+  background-color: #f44336;
   font-weight: 600;
+  color: white;
 }
 
 button:hover {
-  background-color: #ffab00;
+  background-color: #c62828;
 }

@@ -1,0 +1,29 @@
+.counterContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: center;
+}
+
+.counterContainer h3 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 0px;
+  color: #f44336;
+}
+
+.counterRowContainerOuter {
+  padding: 32px;
+  background-color: #0b0f39;
+}
+
+.counterRowContainerOuter div {
+  color: #fff3e0;
+}
+
+.counterRowContainerInner {
+  display: flex;
+  justify-content: space-around;
+  gap: 16px;
+  flex-wrap: wrap;
+}

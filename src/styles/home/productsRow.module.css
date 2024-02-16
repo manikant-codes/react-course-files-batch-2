@@ -1,0 +1,42 @@
+.productCardContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border-radius: 32px;
+  overflow: hidden;
+  padding: 16px;
+  background-color: #eeeeee;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.productCardImgContainer {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 32px;
+}
+
+.productCardImgContainer img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.productCardDescContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.productCardDescContainer button {
+  width: fit-content;
+}
+
+.productsRowContainerOuter {
+  padding: 32px;
+}
+.productsRowContainerInner {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}
