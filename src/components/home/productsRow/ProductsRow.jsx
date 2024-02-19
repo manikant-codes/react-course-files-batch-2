@@ -12,23 +12,23 @@ function ProductsRow() {
       />
       <div className={styles.productsRowContainerInner}>
         <ProductCard
-          src="/images/01.jpg"
+          src="/images/04.jpg"
           title="Product 1"
           desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, repellendus."
         />
         <ProductCard
-          src="/images/02.jpg"
-          title="Product 1"
+          src="/images/05.jpg"
+          title="Product 2"
           desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, repellendus."
         />
         <ProductCard
-          src="/images/03.jpg"
-          title="Product 1"
+          src="/images/06.jpg"
+          title="Product 3"
           desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, repellendus."
         />
         <ProductCard
-          src="/images/01.jpg"
-          title="Product 1"
+          src="/images/07.jpg"
+          title="Product 4"
           desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, repellendus."
         />
       </div>

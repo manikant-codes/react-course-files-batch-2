@@ -8,6 +8,10 @@
   color: black;
 }
 
+.container div h1 {
+  font-weight: bold;
+}
+
 .links {
   display: flex;
   margin: 0px;

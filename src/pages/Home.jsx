@@ -4,6 +4,8 @@ import Carousel from "../components/home/carousel/Carousel";
 import CounterRow from "../components/home/counterRow/CounterRow";
 import InfoRow from "../components/home/infoRow/InfoRow";
 import ProductsRow from "../components/home/productsRow/ProductsRow";
+import FaqsRow from "../components/home/faqsRow/FaqsRow";
+import ContactRow from "../components/home/contactRow/ContactRow";
 
 function Home() {
   return (
@@ -22,6 +24,8 @@ function Home() {
       />
       <CounterRow />
       <ProductsRow />
+      <FaqsRow />
+      <ContactRow />
     </div>
   );
 }

@@ -6,11 +6,11 @@ function Navbar() {
   return (
     <div className={styles.container}>
       <div>
-        <h1>Pkodex</h1>
+        <h1>Pokedex</h1>
       </div>
       <ul className={styles.links}>
         <li>Home</li>
-        <li>Pokekex</li>
+        <li>Pokedex</li>
         <li>About</li>
         <li>Contact</li>
       </ul>
