@@ -16,7 +16,7 @@ function Faq(props) {
           className="fa-solid fa-angle-up"
           onClick={onExpand}
           style={{
-            transition: "all 300ms linear",
+            transition: "all 100ms linear",
             rotate: isExpanded ? "0deg" : "180deg",
             cursor: "pointer",
           }}
@@ -25,9 +25,9 @@ function Faq(props) {
 
       <p
         style={{
-          maxHeight: isExpanded ? "300px" : "0px",
+          height: isExpanded ? "fit-content" : "0px",
           overflow: "hidden",
-          transition: "all 300ms linear",
+          transition: "all 1000ms linear",
         }}
       >
         {props.ans}

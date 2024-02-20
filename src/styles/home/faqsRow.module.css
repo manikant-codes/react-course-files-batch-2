@@ -4,7 +4,13 @@
   gap: 12px;
   background-color: #fff3e0;
   padding: 16px 32px;
+  border-radius: 32px;
 }
+
+.faqContainer p {
+  margin: 0px;
+}
+
 .faqQuestionContainer {
   display: flex;
   align-items: center;
@@ -17,10 +23,12 @@
 .faqQuestionContainer p {
   margin: 0px;
   flex-grow: 1;
+  height: fit-content;
 }
 
 .faqsRowContainer {
   padding: 32px;
+  background-color: #e8eaf6;
 }
 
 .faqsRowInnerContainer {
