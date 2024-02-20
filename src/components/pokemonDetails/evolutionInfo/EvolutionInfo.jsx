@@ -21,26 +21,25 @@ function EvolutionInfo(props) {
   useEffect(() => {
     async function fethchDataFromApi() {
       const evolutionChain = await fetchEvolutionChain(id);
-      console.log("evolutionChain", evolutionChain);
       const names = getAllSpeciesNames(evolutionChain);
-      // console.log("names", names);
-      // const urls = names.map((value) => {
-      //   return `https://pokeapi.co/api/v2/pokemon/${value}`;
-      // });
-      // const data = await fetchMultipleData(urls);
-      // setEvolutions(data);
+      const urls = names.map((name) => {
+        return `https://pokeapi.co/api/v2/pokemon/${name}`;
+      });
+      const data = await fetchMultipleData(urls);
+      setEvolutions(data);
     }
 
     fethchDataFromApi();
   }, [id]);
 
-  console.log("evolutions", evolutions);
-
   return (
     <div className={styles.container}>
       <div className={styles.containerInner}>
-        {evolutions.map((value) => (
-          <Badge src={value.sprites.other["official-artwork"].front_default} />
+        {evolutions.map((evolution, index) => (
+          <Badge
+            key={index}
+            src={evolution.sprites.other["official-artwork"].front_default}
+          />
         ))}
       </div>
     </div>

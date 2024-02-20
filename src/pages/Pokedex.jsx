@@ -6,9 +6,13 @@ import Searchbar from "../components/pokedex/Searchbar";
 import { useMultipleFetch } from "../customHooks/useFetch";
 
 function Pokedex() {
-  const limit = 20;
   const [page, setPage] = useState(0);
+  const [query, setQuery] = useState();
+  const [searchResult, setSearchResult] = useState(null);
+
+  const limit = 20;
   const offset = limit * page;
+
   const { loading, data, error } = useMultipleFetch(
     `https://pokeapi.co/api/v2/pokemon/?offset=${offset}&limit=${limit}`,
     (response) => {
@@ -17,8 +21,6 @@ function Pokedex() {
       });
     }
   );
-  const [query, setQuery] = useState();
-  const [searchResult, setSearchResult] = useState(null);
 
   if (loading) return <Loading />;
 
