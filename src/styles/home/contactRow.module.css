@@ -1,0 +1,28 @@
+.contatcRowContainerOuter {
+  padding: 32px;
+}
+
+.contatcRowContainerInner {
+  display: flex;
+  gap: 16px;
+}
+
+.addressContainerOuter {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background-color: #fff3e0;
+  padding: 32px;
+}
+
+.addressItemContainer {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.descContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}

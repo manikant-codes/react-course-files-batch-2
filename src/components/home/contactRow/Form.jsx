@@ -1,75 +1,100 @@
-import emailjs from "@emailjs/browser";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
+import { sendMail } from "../../../services/apiServices";
+import Modal from "../../common/Modal";
 
 function Form() {
-  const form = useRef();
+  const formRef = useRef();
+  const [isOpen, setIsOpen] = useState(false);
+  const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  function sendMail(e) {
+  async function handleSumbit(e) {
     e.preventDefault();
+    setLoading(true);
+    try {
+      await sendMail(formRef.current);
+      setError(false);
+    } catch (err) {
+      setError(true);
+    } finally {
+      setLoading(false);
+      setIsOpen(true);
+    }
+  }
 
-    emailjs
-      .sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", form.current, {
-        publicKey: "YOUR_PUBLIC_KEY",
-      })
-      .then(() => {
-        console.log("SUCCESS!");
-      })
-      .catch((error) => {
-        console.log("FAILED...", error.text);
-      });
+  function onClose() {
+    setIsOpen(!isOpen);
   }
 
   return (
-    <form
-      ref={form}
-      onSubmit={sendMail}
-      style={{ backgroundColor: "#fff3e0", padding: "32px", flexGrow: 1 }}
-    >
-      <div class="row">
-        <div class="form-group col-md-6">
-          <label for="name">Your Name</label>
+    <>
+      <form
+        ref={formRef}
+        onSubmit={handleSumbit}
+        style={{ backgroundColor: "#fff3e0", padding: "32px", flexGrow: 1 }}
+      >
+        <div class="row">
+          <div class="form-group col-md-6">
+            <label for="name">Your Name</label>
+            <input
+              type="text"
+              name="name"
+              class="form-control"
+              id="name"
+              required=""
+            />
+          </div>
+          <div class="form-group col-md-6">
+            <label for="name">Your Email</label>
+            <input
+              type="email"
+              class="form-control"
+              name="email"
+              id="email"
+              required=""
+            />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="name">Subject</label>
           <input
             type="text"
-            name="name"
             class="form-control"
-            id="name"
+            name="subject"
+            id="subject"
             required=""
           />
         </div>
-        <div class="form-group col-md-6">
-          <label for="name">Your Email</label>
-          <input
-            type="email"
+        <div class="form-group">
+          <label for="name">Message</label>
+          <textarea
             class="form-control"
-            name="email"
-            id="email"
+            name="message"
+            rows="10"
             required=""
-          />
+          ></textarea>
         </div>
-      </div>
-      <div class="form-group">
-        <label for="name">Subject</label>
-        <input
-          type="text"
-          class="form-control"
-          name="subject"
-          id="subject"
-          required=""
+        <div class="text-center mt-4">
+          <button type="submit">
+            {loading ? "Sending..." : "Send Message"}
+          </button>
+        </div>
+      </form>
+      {isOpen && (
+        <Modal
+          title={error ? "Failed!" : "Success!"}
+          closeBtnText="Ok"
+          component={
+            error ? (
+              <p>Something went wrong!</p>
+            ) : (
+              <p>Message sent successfully!</p>
+            )
+          }
+          onClose={onClose}
         />
-      </div>
-      <div class="form-group">
-        <label for="name">Message</label>
-        <textarea
-          class="form-control"
-          name="message"
-          rows="10"
-          required=""
-        ></textarea>
-      </div>
-      <div class="text-center mt-4">
-        <button type="submit">Send Message</button>
-      </div>
-    </form>
+      )}
+    </>
   );
 }
 

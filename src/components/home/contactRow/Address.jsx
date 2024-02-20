@@ -1,17 +1,10 @@
 import React from "react";
 import AddressItem from "./AddressItem";
+import styles from "../../../styles/home/contactRow.module.css";
 
 function Address() {
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        gap: "16px",
-        backgroundColor: "#fff3e0",
-        padding: "32px",
-      }}
-    >
+    <div className={styles.addressContainerOuter}>
       <AddressItem
         iconClass="fa-regular fa-compass"
         title="Address"

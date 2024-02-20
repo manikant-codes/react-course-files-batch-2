@@ -1,3 +1,5 @@
+import emailjs from "@emailjs/browser";
+
 export const apis = {
   getPokemosList: (offset, limit) => {
     return `https://pokeapi.co/api/v2/pokemon/?offset=${offset}&limit=${limit}`;
@@ -43,4 +45,17 @@ export async function fetchEvoulutionChain(id) {
   const evolutionChain = await fetchData(species.evolution_chain.url);
 
   return evolutionChain.chain;
+}
+
+export async function sendMail(form) {
+  console.log(process.env);
+  const response = await emailjs.sendForm(
+    process.env.REACT_APP_EJS_SERVICE_ID,
+    process.env.REACT_APP_EJS_TEMPLATE_ID,
+    form,
+    {
+      publicKey: process.env.REACT_APP_EJS_PUBLIC_KEY,
+    }
+  );
+  return response;
 }
