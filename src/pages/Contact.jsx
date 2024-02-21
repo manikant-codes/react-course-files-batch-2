@@ -1,8 +1,8 @@
 import React from "react";
 import Layout from "../layouts/Layout";
 
-function NotFound() {
-  return <>NotFound</>;
+function Contact() {
+  return <>Contact</>;
 }
 
-export default NotFound;
+export default Contact;

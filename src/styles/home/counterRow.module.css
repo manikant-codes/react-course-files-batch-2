@@ -14,7 +14,11 @@
 
 .counterRowContainerOuter {
   padding: 32px;
-  background-color: #0b0f39;
+  background: linear-gradient(
+    96deg,
+    rgba(33, 150, 243, 1) 0%,
+    rgba(69, 39, 160, 1) 83%
+  );
 }
 
 .counterRowContainerOuter div {

@@ -6,10 +6,13 @@ import InfoRow from "../components/home/infoRow/InfoRow";
 import ProductsRow from "../components/home/productsRow/ProductsRow";
 import FaqsRow from "../components/home/faqsRow/FaqsRow";
 import ContactRow from "../components/home/contactRow/ContactRow";
+import Navbar from "../layouts/Navbar";
+import Footer from "../layouts/Footer";
+import Layout from "../layouts/Layout";
 
 function Home() {
   return (
-    <div>
+    <>
       <Carousel />
       <InfoRow
         src="/images/01.jpg"
@@ -26,7 +29,7 @@ function Home() {
       <ProductsRow />
       <FaqsRow />
       <ContactRow />
-    </div>
+    </>
   );
 }
 

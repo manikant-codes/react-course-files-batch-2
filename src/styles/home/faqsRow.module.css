@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
-  background-color: #fff3e0;
+  background-color: white;
   padding: 16px 32px;
   border-radius: 32px;
 }
@@ -28,7 +28,11 @@
 
 .faqsRowContainer {
   padding: 32px;
-  background-color: #e8eaf6;
+  background: linear-gradient(
+    96deg,
+    rgba(204, 255, 144, 1) 0%,
+    rgba(105, 240, 174, 1) 83%
+  );
 }
 
 .faqsRowInnerContainer {

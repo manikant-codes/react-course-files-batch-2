@@ -54,7 +54,8 @@ export async function sendMail(form) {
     process.env.REACT_APP_EJS_TEMPLATE_ID,
     form,
     {
-      publicKey: process.env.REACT_APP_EJS_PUBLIC_KEY,
+      publicKey: "",
+      // publicKey: process.env.REACT_APP_EJS_PUBLIC_KEY,
     }
   );
   return response;

@@ -19,3 +19,11 @@
   list-style-type: none;
   gap: 16px;
 }
+
+.activePage {
+  color: red;
+}
+
+/* .inAactivePage {
+  color: red;
+} */

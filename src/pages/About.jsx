@@ -1,8 +1,8 @@
 import React from "react";
 import Layout from "../layouts/Layout";
 
-function NotFound() {
-  return <>NotFound</>;
+function About() {
+  return <>About</>;
 }
 
-export default NotFound;
+export default About;

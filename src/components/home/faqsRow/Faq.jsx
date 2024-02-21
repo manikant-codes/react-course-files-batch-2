@@ -27,7 +27,7 @@ function Faq(props) {
         style={{
           height: isExpanded ? "fit-content" : "0px",
           overflow: "hidden",
-          transition: "all 1000ms linear",
+          transition: "all 2s linear",
         }}
       >
         {props.ans}

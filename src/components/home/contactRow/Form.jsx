@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import { sendMail } from "../../../services/apiServices";
 import Modal from "../../common/Modal";
+import styles from "../../../styles/home/contactRow.module.css";
 
 function Form() {
   const formRef = useRef();
@@ -31,7 +32,7 @@ function Form() {
       <form
         ref={formRef}
         onSubmit={handleSumbit}
-        style={{ backgroundColor: "#fff3e0", padding: "32px", flexGrow: 1 }}
+        className={styles.formContainer}
       >
         <div class="row">
           <div class="form-group col-md-6">
