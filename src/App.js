@@ -5,16 +5,27 @@ import Contact from "./pages/Contact";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import Layout from "./layouts/Layout";
+import Products from "./pages/Products";
+import ProductsNew from "./pages/ProductsNew";
+import ProductDetails from "./pages/ProductDetails";
+import ProductsLayout from "./layouts/ProductsLayout";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="about" element={<About />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="*" element={<NotFound />} />
+        <Route element={<Layout />}>
+          <Route path="/">
+            <Route index element={<Home />} />
+            <Route path="about" element={<About />} />
+            <Route path="contact" element={<Contact />} />
+            <Route path="*" element={<NotFound />} />
+          </Route>
+          <Route path="/products" element={<ProductsLayout />}>
+            <Route index element={<Products />} />
+            <Route path=":id" element={<ProductDetails />} />
+            <Route path="new" element={<ProductsNew />} />
+          </Route>
         </Route>
       </Routes>
     </BrowserRouter>

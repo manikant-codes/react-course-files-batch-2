@@ -3,7 +3,6 @@ import styles from "../styles/layouts/navbar.module.css";
 import { Link, NavLink } from "react-router-dom";
 
 function Navbar() {
-  console.log("styles", styles);
   return (
     <div className={styles.container}>
       <div>
@@ -16,7 +15,6 @@ function Navbar() {
           <NavLink
             to="/"
             className={({ isActive }) => {
-              console.log("isActive", isActive);
               return isActive ? styles.activePage : "";
             }}
           >
@@ -29,7 +27,6 @@ function Navbar() {
           <NavLink
             to="/about"
             className={({ isActive }) => {
-              console.log("isActive", isActive);
               return isActive ? styles.activePage : "";
             }}
           >
@@ -41,7 +38,6 @@ function Navbar() {
           <NavLink
             to="/pokedex"
             className={({ isActive }) => {
-              console.log("isActive", isActive);
               return isActive ? styles.activePage : "";
             }}
           >
@@ -53,7 +49,6 @@ function Navbar() {
           <NavLink
             to="/contact"
             className={({ isActive }) => {
-              console.log("isActive", isActive);
               return isActive ? styles.activePage : "";
             }}
           >

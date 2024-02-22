@@ -88,7 +88,6 @@ function Carousel() {
     return <Slide key={index} src={value.src} alt={value.alt} />;
   });
 
-  console.log(components);
   return (
     <div>
       <Slider {...settings}>{components}</Slider>

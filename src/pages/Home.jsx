@@ -9,11 +9,15 @@ import ContactRow from "../components/home/contactRow/ContactRow";
 import Navbar from "../layouts/Navbar";
 import Footer from "../layouts/Footer";
 import Layout from "../layouts/Layout";
+import { useOutletContext } from "react-router-dom";
 
 function Home() {
+  const context = useOutletContext();
+  console.log("context", context);
   return (
     <>
       <Carousel />
+      {/* {context} */}
       <InfoRow
         src="/images/01.jpg"
         title="About Us"

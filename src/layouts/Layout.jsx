@@ -4,10 +4,11 @@ import Footer from "./Footer";
 import Navbar from "./Navbar";
 
 function Layout(props) {
+  const element = <div style={{ backgroundColor: "red" }}>Hello</div>;
   return (
     <>
       <Navbar />
-      <Outlet />
+      <Outlet context={{ number: 40 }} />
       {/* {props.children} */}
       <Footer />
     </>
