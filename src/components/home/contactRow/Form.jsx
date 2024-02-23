@@ -34,48 +34,48 @@ function Form() {
         onSubmit={handleSumbit}
         className={styles.formContainer}
       >
-        <div class="row">
-          <div class="form-group col-md-6">
-            <label for="name">Your Name</label>
+        <div className="row">
+          <div className="form-group col-md-6">
+            <label htmlFor="name">Your Name</label>
             <input
               type="text"
               name="name"
-              class="form-control"
+              className="form-control"
               id="name"
               required=""
             />
           </div>
-          <div class="form-group col-md-6">
-            <label for="name">Your Email</label>
+          <div className="form-group col-md-6">
+            <label htmlFor="name">Your Email</label>
             <input
               type="email"
-              class="form-control"
+              className="form-control"
               name="email"
               id="email"
               required=""
             />
           </div>
         </div>
-        <div class="form-group">
-          <label for="name">Subject</label>
+        <div className="form-group">
+          <label htmlFor="name">Subject</label>
           <input
             type="text"
-            class="form-control"
+            className="form-control"
             name="subject"
             id="subject"
             required=""
           />
         </div>
-        <div class="form-group">
-          <label for="name">Message</label>
+        <div className="form-group">
+          <label htmlFor="name">Message</label>
           <textarea
-            class="form-control"
+            className="form-control"
             name="message"
             rows="10"
             required=""
           ></textarea>
         </div>
-        <div class="text-center mt-4">
+        <div className="text-center mt-4">
           <button type="submit">
             {loading ? "Sending..." : "Send Message"}
           </button>

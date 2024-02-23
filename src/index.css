@@ -34,3 +34,9 @@ button:hover {
     width: 50px;
   }
 }
+
+#mainNav ul li .active {
+  color: white;
+  background-color: red;
+  padding: 2px;
+}

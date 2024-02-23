@@ -9,10 +9,15 @@ import Products from "./pages/Products";
 import ProductsNew from "./pages/ProductsNew";
 import ProductDetails from "./pages/ProductDetails";
 import ProductsLayout from "./layouts/ProductsLayout";
+import ContactNav from "./layouts/ContactNav";
+import ProductsRoutes from "./routes/ProductsRoutes";
 
 function App() {
   return (
     <BrowserRouter>
+      <Routes location="/contact">
+        <Route path="/contact" element={<ContactNav />} />
+      </Routes>
       <Routes>
         <Route element={<Layout />}>
           <Route path="/">
@@ -21,11 +26,7 @@ function App() {
             <Route path="contact" element={<Contact />} />
             <Route path="*" element={<NotFound />} />
           </Route>
-          <Route path="/products" element={<ProductsLayout />}>
-            <Route index element={<Products />} />
-            <Route path=":id" element={<ProductDetails />} />
-            <Route path="new" element={<ProductsNew />} />
-          </Route>
+          <Route path="/products/*" element={<ProductsRoutes />} />
         </Route>
       </Routes>
     </BrowserRouter>

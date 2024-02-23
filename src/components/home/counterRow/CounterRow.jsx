@@ -12,7 +12,7 @@ function CounterRow() {
   ];
 
   const components = data.map(function (value, index) {
-    return <Counter number={value.number} desc={value.desc} />;
+    return <Counter key={index} number={value.number} desc={value.desc} />;
   });
 
   return (
