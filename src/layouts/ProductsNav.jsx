@@ -12,7 +12,16 @@ function ProductsNav() {
           <Link to="/products/new">New Products</Link>
         </li>
         <li>
-          <Link to="/products/1">Product 1</Link>
+          <Link
+            to="/products/1"
+            state={{
+              name: "Prduct 1",
+              desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, vel.",
+              price: "500",
+            }}
+          >
+            Product 1
+          </Link>
         </li>
         <li>
           <Link to="/products/2">Product 2</Link>

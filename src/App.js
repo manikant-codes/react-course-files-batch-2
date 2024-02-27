@@ -26,6 +26,7 @@ function App() {
             <Route path="contact" element={<Contact />} />
             <Route path="*" element={<NotFound />} />
           </Route>
+
           <Route path="/products/*" element={<ProductsRoutes />} />
         </Route>
       </Routes>
