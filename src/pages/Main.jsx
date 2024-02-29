@@ -1,15 +1,8 @@
 import React from "react";
-import ComponentA from "../components/contextDemo/ComponentA";
-import ThemeProvider, {
-  useTheme,
-} from "../components/contextDemo/ThemeProvider";
+import ReducerHookDemo from "../components/reducerDemo/ReducerHookDemo";
 
 function Main() {
-  return (
-    <ThemeProvider>
-      <ComponentA />
-    </ThemeProvider>
-  );
+  return <ReducerHookDemo />;
 }
 
 export default Main;
