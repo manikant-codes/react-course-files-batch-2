@@ -1,0 +1,29 @@
+.addTaskContainer {
+  display: flex;
+  background-color: #ef9a9a;
+  width: 300px;
+  padding: 12px;
+  border-radius: 32px;
+  margin-bottom: 16px;
+  gap: 12px;
+}
+
+.addTaskContainer input {
+  flex-grow: 1;
+  padding: 8px 16px;
+  border-radius: 32px;
+  border: none;
+}
+
+.addTaskContainer button {
+  padding: 8px 16px;
+  border-radius: 32px;
+  border: none;
+  cursor: pointer;
+  background-color: #f44336;
+  color: white;
+}
+
+button:hover {
+  background-color: #c62828;
+}

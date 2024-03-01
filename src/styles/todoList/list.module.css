@@ -1,0 +1,46 @@
+.listContainer {
+  padding: 32px;
+  background-color: #ffcdd2;
+  border-radius: 24px;
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.listItemContainer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.listItemTask {
+  flex-grow: 1;
+}
+
+.btnEdit,
+.btnDelete {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+
+.btnEdit {
+  background-color: #2979ff;
+  color: white;
+}
+
+.btnEdit:hover {
+  background-color: #2962ff;
+}
+
+.btnDelete {
+  background-color: #f44336;
+  color: white;
+}
+
+.btnDelete:hover {
+  background-color: #d32f2f;
+}

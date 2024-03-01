@@ -1,8 +1,8 @@
 import React from "react";
-import ReducerHookDemo from "../components/reducerDemo/ReducerHookDemo";
+import TodoList from "../components/reducerDemo/todoList/TodoList";
 
 function Main() {
-  return <ReducerHookDemo />;
+  return <TodoList />;
 }
 
 export default Main;

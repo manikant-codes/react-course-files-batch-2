@@ -1,0 +1,15 @@
+.todoNavContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #b71c1c;
+  height: 60px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.todoNavContainer h1 {
+  color: white;
+}
