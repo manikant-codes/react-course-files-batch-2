@@ -9,6 +9,14 @@ const ACTIONS = {
   MULTI_INCREMENT: "MULTI_INCREMENT",
 };
 
+function incrementAC() {
+  return { type: ACTIONS.INCREMENT };
+}
+
+function decrementAC() {
+  return { type: ACTIONS.DECREMENT };
+}
+
 function reducer(count, action) {
   switch (action.type) {
     case ACTIONS.INCREMENT:
@@ -26,11 +34,11 @@ function ReducerHookDemo() {
   const [count, dispatch] = useReducer(reducer, initialState);
 
   function decrement() {
-    dispatch({ type: ACTIONS.DECREMENT });
+    dispatch(decrementAC());
   }
 
   function increment() {
-    dispatch({ type: ACTIONS.INCREMENT });
+    dispatch(incrementAC());
   }
 
   function multiIncrement() {

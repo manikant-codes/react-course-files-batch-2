@@ -1,8 +1,8 @@
 import React from "react";
-import TodoList from "../components/reducerDemo/todoList/TodoList";
+import ReduxDemo from "../components/reduxDemo/ReduxDemo";
 
 function Main() {
-  return <TodoList />;
+  return <ReduxDemo />;
 }
 
 export default Main;
