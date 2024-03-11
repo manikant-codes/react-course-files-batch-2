@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { restock, sell } from "../../redux/slices/cakeSlice";
 import {
@@ -6,10 +6,15 @@ import {
   sell as sellIcecream,
 } from "../../redux/slices/icecreamSlice";
 import styles from "../../styles/reduxDemo/reduxDemo.module.css";
+import { fetchUsers } from "../../redux/slices/userSlice";
 
 function ReduxDemo() {
   const cake = useSelector((store) => {
     return store.cake;
+  });
+
+  const user = useSelector((store) => {
+    return store.user;
   });
 
   const icecream = useSelector((store) => {
@@ -40,6 +45,14 @@ function ReduxDemo() {
   function incrementByAmount() {
     dispatch(restock(3));
   }
+
+  console.log(user.loading);
+  console.log(user.error);
+  console.log(user.users);
+
+  useEffect(() => {
+    dispatch(fetchUsers());
+  }, []);
 
   return (
     <>
