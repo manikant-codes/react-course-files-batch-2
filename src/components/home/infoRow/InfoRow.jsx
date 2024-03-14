@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "../../../styles/home/infoRow.module.css";
 
 function InfoRow(props) {
-  if (props.contentFirst) {
+  const [isContentFirst, setIsContentFirst] = useState(props.contentFirst);
+
+  if (isContentFirst) {
     return (
       <div className={styles.container}>
         <div className={`${styles.descContainer} ${styles.descContainerCF}`}>
