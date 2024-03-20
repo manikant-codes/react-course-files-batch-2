@@ -1,0 +1,24 @@
+01. Explain what is virtual DOM with it's workings. (3 Marks)
+or
+01. Explain the difference between CSS file and CSS module.
+
+02. What is JSX? What are the rules for using JSX? (3 Marks)
+
+03. How can you write expressions in JSX? Give a code example. (2 Marks)
+
+04. What are components in React? Give a code example of how to create and use a function component in react. (3 Marks)
+
+05. How can you make a component re-useable with props in react? Give only code example. (4 Marks)
+OR
+05. Explain conditional rendering in react with code example. (4 Marks)
+
+06. Explain useState with a code exmple. (5 Marks)
+
+07. What is react-router-dom? Explain how to use it in react with code example. 
+(5 Marks)
+
+08. Explain with a code example how to render a list in react using Array.map(). (3 Marks)
+
+09. Also explain the importance of key prop. (2 Marks)
+OR
+09. What are hooks in react? What are the rules for using them. (2 Marks)

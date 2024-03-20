@@ -1,11 +1,15 @@
-import React, { Component } from "react";
+import React from "react";
 import Navbar from "../components/Navbar";
+import Counter from "../components/Counter";
 
-export class Home extends Component {
+export class Home extends React.Component {
   render() {
     return (
       <div>
-        <Navbar />
+        <Navbar logo="My Company" />
+        <Counter />
+        <Counter />
+        {/* new Navbar({logo: "My Company"}) */}
       </div>
     );
   }

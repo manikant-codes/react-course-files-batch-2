@@ -5,7 +5,7 @@ export class Navbar extends Component {
   render() {
     return (
       <nav>
-        <h1>Logo</h1>
+        <h1>{this.props.logo}</h1>
         <ul>
           <li>
             <Link to="/">Home</Link>
