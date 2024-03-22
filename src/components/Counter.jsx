@@ -56,7 +56,8 @@ export class Counter extends Component {
   }
 
   componentWillUnmount() {
-    console.log("unmountingd", this.state.users);
+    alert("Bye from: " + this.props.num);
+    console.log(this.props);
   }
 
   deleteComp = () => {
@@ -71,7 +72,13 @@ export class Counter extends Component {
           <button onClick={this.decrement}>Decrement</button>
           <h1>{this.state.count}</h1>
           <button onClick={this.increment}>Increment</button>
-          <button onClick={this.deleteComp}>Delete</button>
+          <button
+            onClick={() => {
+              this.props.toggleVisibility(this.props.num);
+            }}
+          >
+            Delete
+          </button>
           <p>{this.state.name}</p>
         </div>
       );
